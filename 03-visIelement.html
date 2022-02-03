@@ -17,7 +17,7 @@
     <script>
       const dyr = {
         navn: "Gris",
-        type: " pattedyr ",
+        type: " pattedyr",
         billede: "http://mabe-kea.dk/E19/pics/pig.png",
         levested: " svinefarme",
       };
@@ -31,10 +31,8 @@
         const destination = document.querySelector("#dyr");
 
         destination.querySelector("h3").textContent = dyr.navn;
-        destination.querySelector("p:first-of-type").textContent =
-          "Type:" + dyr.type;
-        destination.querySelector("p:last-of-type").textContent =
-          "Levested:" + dyr.levested;
+        destination.querySelector("p:first-of-type").innerHTML += dyr.type;
+        destination.querySelector("p:last-of-type").innerHTML += dyr.levested;
         destination.querySelector("img").src = dyr.billede;
       }
     </script>
