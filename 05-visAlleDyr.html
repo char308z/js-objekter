@@ -50,7 +50,7 @@
         ];
 
         console.log(dyr);
-        let listeVisning = document.querySelector("#liste");
+        const listeVisning = document.querySelector("#liste");
         dyr.forEach((dyr) => {
           listeVisning.innerHTML += `<p>${dyr.navn} ${dyr.type} ${dyr.levested}</p>`;
         });
