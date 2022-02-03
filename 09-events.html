@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Øvelse 7</title>
+    <style>
+      img {
+        width: 100%;
+      }
+      section {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        grid-gap: 5px;
+      }
+      article {
+        border: 1px solid black;
+        margin: 2%;
+        padding: 2%;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="liste"></section>
+    <template>
+      <article>
+        <img src="" alt="" />
+        <h3></h3>
+        <p></p>
+      </article>
+    </template>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", visVideoer);
+      let videoer = [
+        {
+          navn: "A Caling",
+          instruktør: " Christian Bengtson | ",
+          billede:
+            "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/W6dOqabNhHKBPXxxKKEZRA84-360.jpg",
+          land: " Danmark | ",
+          år: "2019",
+        },
+        {
+          navn: "A Hole In My Heart",
+          instruktør: " Mees Peijnenburg | ",
+          billede:
+            "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/Q8K1pZrOs03Q0IrDkBwGVu5r-360.jpg",
+          land: " Holland | ",
+          år: "2015",
+        },
+        {
+          navn: "A Place In The Sun - 110 years after the genocide",
+          instruktør: "Christian Zipfel | ",
+          billede:
+            "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/hUd4SdGQ8I23ovxWnGtBz4Ck-360.jpg",
+          land: " Tyskland | ",
+          år: "2018",
+        },
+        {
+          navn: "A Tower of Two",
+          instruktør: "Jacob Krzysztof Glogowski | ",
+          billede:
+            "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/Zdt2ODEqSVOkNe8nUaSSu8kd-360.jpg",
+          land: " Danmark | ",
+          år: "2019",
+        },
+        {
+          navn: "A Woman Without Children",
+          instruktør: " Cecilie Kronborg Thomsen | ",
+          billede:
+            "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/HRZBn8KLPmvVNvoJ4e8CzUVU-360.jpg",
+          land: " Danmark |",
+          år: "2021 ",
+        },
+      ];
+
+      function visVideoer() {
+        console.log(videoer);
+
+        let listeVisning = document.querySelector("#liste");
+        const videoTemplate = document.querySelector("template");
+        videoer.forEach((videoer) => {
+          let klon = videoTemplate.cloneNode(true).content;
+          klon.querySelector("h3").textContent = videoer.navn;
+          klon.querySelector("p").textContent =
+            videoer.instruktør + videoer.land + videoer.år;
+          klon.querySelector("img").src = videoer.billede;
+          listeVisning.appendChild(klon);
+        });
+      }
+    </script>
+  </body>
+</html>
